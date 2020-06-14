@@ -3,7 +3,6 @@ function btn_onclick_login_teacher() {
     var email = document.getElementById("login_teacher_email").value;
     var password = document.getElementById("login_teacher_password").value;
     var v = email + "\n" + password;
-    alert(v);
     
    
    axios.post("http://localhost:52433/api/users/login",

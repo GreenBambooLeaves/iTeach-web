@@ -223,7 +223,7 @@ function onclick_submit_session() {//提交问卷
         }
         answers.push(answer);
     }
-    var jstoken = localStorage.getItem("usertoken");
+    var jstoken = localStorage.getItem("studentusertoken");
     var token = JSON.parse(jstoken);
     axios.defaults.headers.common['Authorization'] = token;
     URL_submitSession = "http://localhost:52433/api/sessions/submit/" + sessionId;

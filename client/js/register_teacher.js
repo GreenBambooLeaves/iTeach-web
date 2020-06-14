@@ -4,7 +4,6 @@ function btn_onclick_register_teacher() {
     var password1 = document.getElementById("register_teacher_passwordRepeat").value;
     var name = document.getElementById("register_teacher_name").value;
     var v = email + "\n" + password + "\n" + name;
-    alert(v);
     if (password == password1) { //密码判断
 
         axios.post("http://localhost:52433/api/users/register", {

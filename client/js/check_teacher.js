@@ -322,7 +322,6 @@ function btn_onclick_view_teacher() { //查看题目
                                 questionOptions[i] = questionOptions[i] + "," + questions[i].option[j];
                             }
                         }
-                        alert();
                         questionTrueRate[i] = (questions[i].trueAnswers.length) * 1.0 / (student_amount) * 1.0;
                     }
 

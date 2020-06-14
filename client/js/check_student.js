@@ -90,6 +90,7 @@ $(document).ready(function (e) {
     var questionTrueAnswers = JSON.parse(_questionTrueAnswers);
     var _questionAnswers = localStorage.getItem("squestionAnswers");
     var questionAnswers = JSON.parse(_questionAnswers);
+
     var _questionTrueOrFalses = localStorage.getItem("squestionTrueOrFalses");
     var questionTrueOrFalses = JSON.parse(_questionTrueOrFalses);
 
@@ -273,12 +274,11 @@ function btn_onclick_view_student() { //查看单个问卷详细
         })
         .then(function (response) {
                 if (response.data.status == "success") {
-                    alert(response.data.status);
                     var question_title = response.data.session.name; //问卷的名
                     questions = response.data.questions;
                     var sessionlength = questions.length; //问卷中的题目数量
                     for (let i = 0; i < sessionlength; i++) {
-                        questionTrueOrFalses[i] = questions.trueorfalse; //正误
+                        questionTrueOrFalses[i] = questions[i].trueorfalse; //正误
                         questionContents[i] = questions[i].content; //内容
                         questionClassifications[i] = questions[i].classification; //类型
                         if (questionClassifications[i] == "one-choice") {
@@ -321,7 +321,6 @@ function btn_onclick_view_student() { //查看单个问卷详细
                     localStorage.setItem("squestionAnswers", question_Answers);
                     var question_TrueOrFalses = JSON.stringify(questionTrueOrFalses);
                     localStorage.setItem("squestionTrueOrFalses", question_TrueOrFalses);
-
 
 
 

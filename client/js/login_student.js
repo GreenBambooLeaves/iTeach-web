@@ -2,7 +2,6 @@ function btn_onclick_login_student() {
     var email = document.getElementById("login_student_email").value;
     var password = document.getElementById("login_student_password").value;
     var v = email + "\n" + password;
-    alert(v);
 
 
     axios.post("http://localhost:52433/api/users/login", {
